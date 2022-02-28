@@ -3,10 +3,47 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TicTacToe.TicTacToe">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid Margin="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!--Header-->
+            <Label Grid.Row="0" Grid.ColumnSpan="3" BackgroundColor="OrangeRed" Text="TicTacToe" FontSize="25" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" x:Name="lblHeader"/>
+
+            <!--TicTacToe Buttons-->
+            <Button Grid.Row="1" Grid.Column="0" Clicked="Button_Clicked" x:Name="btn10" FontSize="40"/>
+            <Button Grid.Row="1" Grid.Column="1" Clicked="Button_Clicked" x:Name="btn11" FontSize="40"/>
+            <Button Grid.Row="1" Grid.Column="2" Clicked="Button_Clicked" x:Name="btn12" FontSize="40"/>
+
+            <Button Grid.Row="2" Grid.Column="0" Clicked="Button_Clicked" x:Name="btn20" FontSize="40"/>
+            <Button Grid.Row="2" Grid.Column="1" Clicked="Button_Clicked" x:Name="btn21" FontSize="40"/>
+            <Button Grid.Row="2" Grid.Column="2" Clicked="Button_Clicked" x:Name="btn22" FontSize="40"/>
+
+            <Button Grid.Row="3" Grid.Column="0" Clicked="Button_Clicked" x:Name="btn30" FontSize="40"/>
+            <Button Grid.Row="3" Grid.Column="1" Clicked="Button_Clicked" x:Name="btn31" FontSize="40"/>
+            <Button Grid.Row="3" Grid.Column="2" Clicked="Button_Clicked" x:Name="btn32" FontSize="40"/>
+
+            <!--Switch-->
+            <StackLayout Orientation="Horizontal" Grid.Row="4" Grid.ColumnSpan="3"  VerticalOptions="CenterAndExpand" Margin="5">
+                <Label Text="Single Player"/>
+                <Switch HorizontalOptions="EndAndExpand"/>
+            </StackLayout>
+            
+            <!--Footer-->
+            <Button Grid.Row="5" Grid.ColumnSpan="3" BackgroundColor="OrangeRed" Text="Reset" FontSize="25" TextColor="White" CornerRadius="10" Clicked="ButtonReset_Clicked"/>
+
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
